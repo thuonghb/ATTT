@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Affine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Affine.Designer.cs">
+      <DependentUpon>Affine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caeser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caeser.Designer.cs">
+      <DependentUpon>Caeser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DonBang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonBang.Designer.cs">
+      <DependentUpon>DonBang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Hill.cs">
       <SubType>Form</SubType>
@@ -58,10 +76,22 @@
     <Compile Include="Hill.Designer.cs">
       <DependentUpon>Hill.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayFair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayFair.Designer.cs">
+      <DependentUpon>PlayFair.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vigenere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vigenere.Designer.cs">
+      <DependentUpon>Vigenere.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hill.resx">
       <DependentUpon>Hill.cs</DependentUpon>
