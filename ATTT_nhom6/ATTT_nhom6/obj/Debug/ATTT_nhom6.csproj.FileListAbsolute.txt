@@ -1,0 +1,11 @@
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.AssemblyReference.cache
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Form1.resources
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Hill.resources
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Properties.Resources.resources
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.GenerateResource.cache
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.CoreCompileInputs.cache
+D:\Temp\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.exe.config
+D:\Temp\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.exe
+D:\Temp\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.pdb
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.exe
+D:\Temp\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.pdb
