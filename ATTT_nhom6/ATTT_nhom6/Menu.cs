@@ -32,6 +32,7 @@ namespace ATTT_nhom6
         private void mãCaeserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Caeser caeser = new Caeser();
+            this.Hide();
             caeser.ShowDialog();
         }
 
