@@ -250,5 +250,10 @@ namespace ATTT_nhom6
             this.Close();
 
         }
+
+        private void sizekey_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

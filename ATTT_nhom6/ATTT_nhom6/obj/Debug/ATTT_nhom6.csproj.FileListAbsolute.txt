@@ -20,3 +20,17 @@ C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.c
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.exe
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.pdb
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Menu.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.exe.config
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.exe
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.pdb
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.AssemblyReference.cache
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Menu.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Hill.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Properties.Resources.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.GenerateResource.cache
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.CoreCompileInputs.cache
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.exe
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.pdb
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Caeser.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.DonBang.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Affine.resources

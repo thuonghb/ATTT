@@ -12,9 +12,49 @@ namespace ATTT_nhom6
 {
     public partial class DonBang : Form
     {
+        DonBangCipher donbang = new DonBangCipher();
         public DonBang()
         {
             InitializeComponent();
+        }
+
+        private void btnMH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string khoa = txtKey.Text.ToUpper();
+                donbang.KhoiTaoBang(khoa);
+
+                string vanBan = txtVanBan.Text;
+                string ketQua = donbang.MaHoa(vanBan);
+                txtKetQua.Text = ketQua;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnGM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string khoa = txtKey.Text.ToUpper();
+                donbang.KhoiTaoBang(khoa);
+
+                string vanBan = txtVanBan.Text;
+                string ketQua = donbang.GiaiMa(vanBan);
+                txtKetQua.Text = ketQua;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

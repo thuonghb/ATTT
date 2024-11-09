@@ -12,9 +12,43 @@ namespace ATTT_nhom6
 {
     public partial class Caeser : Form
     {
+        CaeserCipher caeser = new CaeserCipher();
         public Caeser()
         {
             InitializeComponent();
+        }
+
+        private void btnMH_Click(object sender, EventArgs e)
+        {
+            string vanBan = txtVanBan.Text;
+            if (int.TryParse(txtKey.Text, out int khoa))
+            {
+                string ketQua = caeser.MaHoa(vanBan, khoa);
+                txtKetQua.Text = ketQua;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập khóa là số nguyên.");
+            }
+        }
+
+        private void btnGM_Click(object sender, EventArgs e)
+        {
+            string vanBan = txtVanBan.Text;
+            if (int.TryParse(txtKey.Text, out int khoa))
+            {
+                string ketQua = caeser.GiaiMa(vanBan, khoa);
+                txtKetQua.Text = ketQua;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập khóa là số nguyên.");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

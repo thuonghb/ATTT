@@ -101,6 +101,7 @@
             this.sizekey.TabIndex = 10;
             this.sizekey.Text = "Bắt đầu";
             this.sizekey.UseVisualStyleBackColor = true;
+            this.sizekey.Click += new System.EventHandler(this.sizekey_Click);
             // 
             // richTextBox1
             // 
