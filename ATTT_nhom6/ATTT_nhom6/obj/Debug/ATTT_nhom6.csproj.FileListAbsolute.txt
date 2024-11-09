@@ -34,3 +34,7 @@ D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.pdb
 D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Caeser.resources
 D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.DonBang.resources
 D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Affine.resources
+C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Affine.resources
+C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Caeser.resources
+C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.DonBang.resources
+C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.RSA.resources

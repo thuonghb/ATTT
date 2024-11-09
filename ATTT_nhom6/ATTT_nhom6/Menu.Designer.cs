@@ -67,14 +67,14 @@
             this.mãVigenereToolStripMenuItem,
             this.mãHóaHillToolStripMenuItem1});
             this.mãHóaCaserToolStripMenuItem.Name = "mãHóaCaserToolStripMenuItem";
-            this.mãHóaCaserToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
+            this.mãHóaCaserToolStripMenuItem.Size = new System.Drawing.Size(189, 37);
             this.mãHóaCaserToolStripMenuItem.Text = "Mã hóa bí mật";
             this.mãHóaCaserToolStripMenuItem.Click += new System.EventHandler(this.mãHóaCaserToolStripMenuItem_Click);
             // 
             // mãCaeserToolStripMenuItem
             // 
             this.mãCaeserToolStripMenuItem.Name = "mãCaeserToolStripMenuItem";
-            this.mãCaeserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mãCaeserToolStripMenuItem.Size = new System.Drawing.Size(245, 38);
             this.mãCaeserToolStripMenuItem.Text = "Mã Caeser";
             this.mãCaeserToolStripMenuItem.Click += new System.EventHandler(this.mãCaeserToolStripMenuItem_Click);
             // 
@@ -84,41 +84,41 @@
             this.mãHóaĐơnBảnToolStripMenuItem,
             this.mãHóaPlayFairToolStripMenuItem});
             this.mãHóaThayThếToolStripMenuItem.Name = "mãHóaThayThếToolStripMenuItem";
-            this.mãHóaThayThếToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mãHóaThayThếToolStripMenuItem.Size = new System.Drawing.Size(245, 38);
             this.mãHóaThayThếToolStripMenuItem.Text = "Mã thay thế";
             // 
             // mãHóaĐơnBảnToolStripMenuItem
             // 
             this.mãHóaĐơnBảnToolStripMenuItem.Name = "mãHóaĐơnBảnToolStripMenuItem";
-            this.mãHóaĐơnBảnToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.mãHóaĐơnBảnToolStripMenuItem.Size = new System.Drawing.Size(298, 38);
             this.mãHóaĐơnBảnToolStripMenuItem.Text = "Mã hóa đơn bảng";
             this.mãHóaĐơnBảnToolStripMenuItem.Click += new System.EventHandler(this.mãHóaĐơnBảnToolStripMenuItem_Click);
             // 
             // mãHóaPlayFairToolStripMenuItem
             // 
             this.mãHóaPlayFairToolStripMenuItem.Name = "mãHóaPlayFairToolStripMenuItem";
-            this.mãHóaPlayFairToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.mãHóaPlayFairToolStripMenuItem.Size = new System.Drawing.Size(298, 38);
             this.mãHóaPlayFairToolStripMenuItem.Text = "Mã hóa PlayFair";
             this.mãHóaPlayFairToolStripMenuItem.Click += new System.EventHandler(this.mãHóaPlayFairToolStripMenuItem_Click);
             // 
             // mãAffineToolStripMenuItem
             // 
             this.mãAffineToolStripMenuItem.Name = "mãAffineToolStripMenuItem";
-            this.mãAffineToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mãAffineToolStripMenuItem.Size = new System.Drawing.Size(245, 38);
             this.mãAffineToolStripMenuItem.Text = "Mã Affine";
             this.mãAffineToolStripMenuItem.Click += new System.EventHandler(this.mãAffineToolStripMenuItem_Click);
             // 
             // mãVigenereToolStripMenuItem
             // 
             this.mãVigenereToolStripMenuItem.Name = "mãVigenereToolStripMenuItem";
-            this.mãVigenereToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mãVigenereToolStripMenuItem.Size = new System.Drawing.Size(245, 38);
             this.mãVigenereToolStripMenuItem.Text = "Mã Vigenere";
             this.mãVigenereToolStripMenuItem.Click += new System.EventHandler(this.mãVigenereToolStripMenuItem_Click);
             // 
             // mãHóaHillToolStripMenuItem1
             // 
             this.mãHóaHillToolStripMenuItem1.Name = "mãHóaHillToolStripMenuItem1";
-            this.mãHóaHillToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.mãHóaHillToolStripMenuItem1.Size = new System.Drawing.Size(245, 38);
             this.mãHóaHillToolStripMenuItem1.Text = "Mã hóa Hill";
             this.mãHóaHillToolStripMenuItem1.Click += new System.EventHandler(this.mãHóaHillToolStripMenuItem1_Click);
             // 
@@ -128,25 +128,26 @@
             this.mãRSAToolStripMenuItem,
             this.mãDeToolStripMenuItem});
             this.mãHóaHiệnĐạiToolStripMenuItem.Name = "mãHóaHiệnĐạiToolStripMenuItem";
-            this.mãHóaHiệnĐạiToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.mãHóaHiệnĐạiToolStripMenuItem.Size = new System.Drawing.Size(228, 37);
             this.mãHóaHiệnĐạiToolStripMenuItem.Text = "Mã hóa công khai";
             // 
             // mãRSAToolStripMenuItem
             // 
             this.mãRSAToolStripMenuItem.Name = "mãRSAToolStripMenuItem";
-            this.mãRSAToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.mãRSAToolStripMenuItem.Size = new System.Drawing.Size(327, 38);
             this.mãRSAToolStripMenuItem.Text = "Mã RSA";
+            this.mãRSAToolStripMenuItem.Click += new System.EventHandler(this.mãRSAToolStripMenuItem_Click);
             // 
             // mãDeToolStripMenuItem
             // 
             this.mãDeToolStripMenuItem.Name = "mãDeToolStripMenuItem";
-            this.mãDeToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.mãDeToolStripMenuItem.Size = new System.Drawing.Size(327, 38);
             this.mãDeToolStripMenuItem.Text = "Mã Deffine Hecman";
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(93, 37);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
