@@ -64,6 +64,7 @@
     <Compile Include="DonBang.Designer.cs">
       <DependentUpon>DonBang.cs</DependentUpon>
     </Compile>
+    <Compile Include="HillHelpers.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

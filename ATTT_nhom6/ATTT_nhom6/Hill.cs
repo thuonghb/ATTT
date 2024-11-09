@@ -18,216 +18,237 @@ namespace ATTT_nhom6
         {
             InitializeComponent();
         }
-
-        private void mahoa_Click(object sender, EventArgs e)
+        // Hàm đệ quy tính định thức của ma trận n x n
+        private int Determinant(int[,] matrix, int n)
         {
-            // Lấy bản rõ từ RichTextBox
-            string plainText = richTextBox1.Text;
-            int matrixSize;
+            if (n == 1)
+                return matrix[0, 0];
+            if (n == 2)
+                return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
 
-            // Kiểm tra kích thước ma trận
-            if (!int.TryParse(textBox4.Text, out matrixSize) || matrixSize <= 0)
+            int det = 0;
+            int sign = 1;
+
+            for (int i = 0; i < n; i++)
             {
-                MessageBox.Show("Vui lòng nhập kích thước ma trận hợp lệ.");
-                return;
+                int[,] subMatrix = GetSubMatrix(matrix, 0, i, n);
+                det += sign * matrix[0, i] * Determinant(subMatrix, n - 1);
+                sign = -sign;
             }
 
-            // Tạo khóa ma trận
-            int[,] keyMatrix = new int[matrixSize, matrixSize];
-
-            // Nhập các giá trị cho ma trận khóa sử dụng đệ quy
-            if (!FillMatrixRecursively(keyMatrix, matrixSize, 0, 0))
-            {
-                MessageBox.Show("Vui lòng nhập tất cả các giá trị hợp lệ cho ma trận khóa.");
-                return;
-            }
-
-            // Kiểm tra xem bản rõ có trống không
-            if (string.IsNullOrWhiteSpace(plainText))
-            {
-                MessageBox.Show("Xin vui lòng nhập bản rõ.");
-                return;
-            }
-
-            // Mã hóa với khóa (Sử dụng mã hóa Hill)
-            string cipherText = HillCipherEncrypt(plainText, keyMatrix);
-            richTextBox3.Text = cipherText;
-        }
-        private void giaima_Click(object sender, EventArgs e)
-            {
-                // Lấy bản mã từ RichTextBox
-                string cipherText = richTextBox3.Text;
-                int matrixSize;
-
-                // Kiểm tra kích thước ma trận
-                if (!int.TryParse(textBox4.Text, out matrixSize) || matrixSize <= 0)
-                {
-                    MessageBox.Show("Vui lòng nhập kích thước ma trận hợp lệ.");
-                    return;
-                }
-
-                // Tạo ma trận khóa
-                int[,] keyMatrix = new int[matrixSize, matrixSize];
-
-                // Nhập các giá trị cho ma trận khóa sử dụng đệ quy
-                if (!FillMatrixRecursively(keyMatrix, matrixSize, 0, 0))
-                {
-                    MessageBox.Show("Vui lòng nhập tất cả các giá trị hợp lệ cho ma trận khóa.");
-                    return;
-                }
-
-                // Kiểm tra xem bản mã có trống không
-                if (string.IsNullOrWhiteSpace(cipherText))
-                {
-                    MessageBox.Show("Vui lòng nhập bản mã.");
-                    return;
-                }
-
-                // Giải mã với khóa (Sử dụng giải mã Hill)
-                string decryptedText = HillCipherDecrypt(cipherText, keyMatrix);
-                richTextBox1.Text = decryptedText;
-            }
-    
-
-        private string HillCipherEncrypt(string plainText, int[,] keyMatrix)
-        {
-            // Chuyển bản rõ thành các giá trị số (a=0, b=1, ..., z=25)
-            int[] plainTextValues = new int[plainText.Length];
-            for (int i = 0; i < plainText.Length; i++)
-            {
-                plainTextValues[i] = plainText[i] - 'a';
-            }
-
-            // Chia bản rõ thành các vector 2x1
-            int[,] vector = new int[2, 1];
-            string cipherText = "";
-
-            for (int i = 0; i < plainText.Length; i += 2)
-            {
-                vector[0, 0] = plainTextValues[i];
-                if (i + 1 < plainText.Length)
-                {
-                    vector[1, 0] = plainTextValues[i + 1];
-                }
-                else
-                {
-                    vector[1, 0] = 0; // Pad với 'a' nếu không đủ cặp
-                }
-
-                // Mã hóa
-                int[,] cipherVector = MultiplyMatrix(keyMatrix, vector);
-
-                // Chuyển đổi lại các giá trị thành chuỗi ký tự
-                cipherText += (char)(cipherVector[0, 0] % 26 + 'a');
-                cipherText += (char)(cipherVector[1, 0] % 26 + 'a');
-            }
-
-            return cipherText;
+            return det;
         }
 
-        // Hàm giải mã Hill
-        private string HillCipherDecrypt(string cipherText, int[,] keyMatrix)
+        // Hàm tạo ma trận con
+        private int[,] GetSubMatrix(int[,] matrix, int row, int col, int n)
         {
-            // Tính nghịch đảo của ma trận khóa
-            int[,] inverseKeyMatrix = GetMatrixInverse(keyMatrix);
+            int[,] subMatrix = new int[n - 1, n - 1];
+            int subRow = 0, subCol = 0;
 
-            // Chuyển bản mã thành giá trị số (a=0, b=1, ..., z=25)
-            int[] cipherTextValues = new int[cipherText.Length];
-            for (int i = 0; i < cipherText.Length; i++)
+            for (int i = 0; i < n; i++)
             {
-                cipherTextValues[i] = cipherText[i] - 'a';
-            }
-
-            // Chia bản mã thành các vector 2x1
-            int[,] vector = new int[2, 1];
-            string decryptedText = "";
-
-            for (int i = 0; i < cipherText.Length; i += 2)
-            {
-                vector[0, 0] = cipherTextValues[i];
-                vector[1, 0] = cipherTextValues[i + 1];
-
-                // Giải mã
-                int[,] decryptedVector = MultiplyMatrix(inverseKeyMatrix, vector);
-
-                // Chuyển đổi lại các giá trị thành ký tự
-                decryptedText += (char)(decryptedVector[0, 0] % 26 + 'a');
-                decryptedText += (char)(decryptedVector[1, 0] % 26 + 'a');
-            }
-
-            return decryptedText;
-        }
-
-        // Hàm nhân ma trận với vector
-        private int[,] MultiplyMatrix(int[,] matrix, int[,] vector)
-        {
-            int[,] result = new int[2, 1];
-            for (int i = 0; i < 2; i++)
-            {
-                result[i, 0] = 0;
-                for (int j = 0; j < 2; j++)
+                if (i == row) continue;
+                subCol = 0;
+                for (int j = 0; j < n; j++)
                 {
-                    result[i, 0] += matrix[i, j] * vector[j, 0];
+                    if (j == col) continue;
+                    subMatrix[subRow, subCol] = matrix[i, j];
+                    subCol++;
                 }
-                result[i, 0] %= 26; // Phép toán modulo 26
+                subRow++;
             }
-            return result;
+
+            return subMatrix;
         }
 
-        // Hàm lấy ma trận nghịch đảo (modulo 26)
-        private int[,] GetMatrixInverse(int[,] matrix)
-        {
-            int determinant = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
-            int modInverse = ModInverse(determinant, 26);
-            int[,] inverseMatrix = new int[2, 2];
-            inverseMatrix[0, 0] = matrix[1, 1] * modInverse % 26;
-            inverseMatrix[0, 1] = -matrix[0, 1] * modInverse % 26;
-            inverseMatrix[1, 0] = -matrix[1, 0] * modInverse % 26;
-            inverseMatrix[1, 1] = matrix[0, 0] * modInverse % 26;
-
-            // Đảm bảo rằng các giá trị âm trở thành giá trị dương trong modulo 26
-            for (int i = 0; i < 2; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    if (inverseMatrix[i, j] < 0) inverseMatrix[i, j] += 26;
-                }
-            }
-            return inverseMatrix;
-        }
-
-        // Hàm tính nghịch đảo số trong modulo 26
+        // Hàm tính modulo nghịch đảo (sử dụng Euclid mở rộng)
         private int ModInverse(int a, int m)
         {
             a = a % m;
             for (int x = 1; x < m; x++)
             {
-                if ((a * x) % m == 1) return x;
+                if ((a * x) % m == 1)
+                    return x;
             }
-            return -1; // Không tìm thấy nghịch đảo
+            return 1; // Nếu không tìm thấy
         }
 
-        // Hàm nhập giá trị cho ma trận sử dụng đệ quy
-        private bool FillMatrixRecursively(int[,] matrix, int size, int row, int col)
+        // Hàm tính ma trận nghịch đảo mod 26
+        private int[,] InverseMatrixMod26(int[,] matrix, int n)
         {
-            if (row == size) return true; // Đã đi hết các hàng
-            if (col == size)
+            int det = Determinant(matrix, n);
+            int detInv = ModInverse(det % 26, 26);
+            int[,] adjMatrix = new int[n, n]; // Ma trận phụ đại số (adjugate matrix)
+
+            // Tính ma trận phụ đại số (adjugate matrix)
+            for (int i = 0; i < n; i++)
             {
-                // Chuyển sang hàng tiếp theo khi đã đi hết cột
-                return FillMatrixRecursively(matrix, size, row + 1, 0);
+                for (int j = 0; j < n; j++)
+                {
+                    int[,] subMatrix = GetSubMatrix(matrix, i, j, n);
+                    int subDet = Determinant(subMatrix, n - 1);
+                    adjMatrix[j, i] = (int)Math.Pow(-1, i + j) * subDet % 26;
+                    if (adjMatrix[j, i] < 0) adjMatrix[j, i] += 26; // Đảm bảo mod 26
+                }
             }
 
-            // Kiểm tra và lấy giá trị từ TextBox của bảng điều khiển
-            string controlName = "textBoxMatrix" + row + col;
-            TextBox textBox = panel1.Controls[controlName] as TextBox; // Cố gắng lấy TextBox
-            if (textBox != null && int.TryParse(textBox.Text, out int value))
+            // Nhân ma trận phụ đại số với nghịch đảo định thức
+            int[,] invMatrix = new int[n, n];
+            for (int i = 0; i < n; i++)
             {
-                matrix[row, col] = value; // Lưu giá trị vào ma trận
-                return FillMatrixRecursively(matrix, size, row, col + 1); // Tiến đến cột tiếp theo
+                for (int j = 0; j < n; j++)
+                {
+                    invMatrix[i, j] = (adjMatrix[i, j] * detInv) % 26;
+                    if (invMatrix[i, j] < 0) invMatrix[i, j] += 26; // Đảm bảo mod 26
+                }
             }
 
-            return false; // Nếu không có TextBox hoặc giá trị không hợp lệ
+            return invMatrix;
         }
 
+
+        private void mahoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy ma trận khóa từ RichTextBox và chuyển thành ma trận nxn
+                string[] matrixRows = richTextBox1.Text.Trim().Split('\n');
+                int matrixSize = matrixRows.Length;
+                int[,] keyMatrix = new int[matrixSize, matrixSize];
+
+                for (int i = 0; i < matrixSize; i++)
+                {
+                    string[] row = matrixRows[i].Trim().Split(' ');
+                    for (int j = 0; j < matrixSize; j++)
+                    {
+                        keyMatrix[i, j] = int.Parse(row[j]);
+                    }
+                }
+
+                // Kiểm tra định thức của ma trận khóa
+                int det = Determinant(keyMatrix, matrixSize);
+                if (det == 0)
+                {
+                    MessageBox.Show("Ma trận khóa không hợp lệ! Định thức bằng 0.");
+                    return;
+                }
+
+                // Lấy văn bản từ TextBox và chuyển đổi ký tự thành số
+                string plainText = textBox1.Text.ToUpper();
+                plainText = plainText.Replace(" ", ""); // Xóa khoảng trắng
+
+                // Chèn padding nếu văn bản không đủ
+                while (plainText.Length % matrixSize != 0)
+                {
+                    plainText += "X"; // Padding với 'X'
+                }
+
+                // Mã hóa từng khối văn bản
+                string cipherText = "";
+                for (int k = 0; k < plainText.Length; k += matrixSize)
+                {
+                    int[] plainVector = new int[matrixSize];
+                    for (int i = 0; i < matrixSize; i++)
+                    {
+                        plainVector[i] = plainText[k + i] - 'A';
+                    }
+
+                    // Tính toán mã hóa y = (K * x) mod 26
+                    int[] cipherVector = new int[matrixSize];
+                    for (int i = 0; i < matrixSize; i++)
+                    {
+                        cipherVector[i] = 0;
+                        for (int j = 0; j < matrixSize; j++)
+                        {
+                            cipherVector[i] += keyMatrix[i, j] * plainVector[j];
+                        }
+                        cipherVector[i] = cipherVector[i] % 26;
+                    }
+
+                    // Chuyển mã hóa thành ký tự
+                    for (int i = 0; i < matrixSize; i++)
+                    {
+                        cipherText += (char)(cipherVector[i] + 'A');
+                    }
+                }
+
+                // Hiển thị kết quả mã hóa
+                textBox2.Text = cipherText;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void giaima_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy ma trận khóa từ RichTextBox và chuyển thành ma trận nxn
+                string[] matrixRows = richTextBox1.Text.Trim().Split('\n');
+                int matrixSize = matrixRows.Length;
+                int[,] keyMatrix = new int[matrixSize, matrixSize];
+
+                for (int i = 0; i < matrixSize; i++)
+                {
+                    string[] row = matrixRows[i].Trim().Split(' ');
+                    for (int j = 0; j < matrixSize; j++)
+                    {
+                        keyMatrix[i, j] = int.Parse(row[j]);
+                    }
+                }
+
+                // Tính ma trận nghịch đảo mod 26
+                int[,] inverseKeyMatrix = InverseMatrixMod26(keyMatrix, matrixSize);
+
+                // Lấy văn bản mã hóa từ TextBox
+                string cipherText = textBox1.Text.ToUpper();
+
+                // Giải mã từng khối văn bản
+                string decryptedText = "";
+                for (int k = 0; k < cipherText.Length; k += matrixSize)
+                {
+                    int[] cipherVector = new int[matrixSize];
+                    for (int i = 0; i < matrixSize; i++)
+                    {
+                        cipherVector[i] = cipherText[k + i] - 'A';
+                    }
+
+                    // Tính toán giải mã x = (K^-1 * y) mod 26
+                    int[] plainVector = new int[matrixSize];
+                    for (int i = 0; i < matrixSize; i++)
+                    {
+                        plainVector[i] = 0;
+                        for (int j = 0; j < matrixSize; j++)
+                        {
+                            plainVector[i] += inverseKeyMatrix[i, j] * cipherVector[j];
+                        }
+                        plainVector[i] = plainVector[i] % 26;
+                    }
+
+                    // Chuyển mã hóa thành ký tự
+                    for (int i = 0; i < matrixSize; i++)
+                    {
+                        decryptedText += (char)(plainVector[i] + 'A');
+                    }
+                }
+
+                // Hiển thị kết quả giải mã
+                textBox2.Text = decryptedText;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void Thoat_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Close();
+
+        }
     }
 }

@@ -13,10 +13,10 @@ C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.e
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.exe
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\bin\Debug\ATTT_nhom6.pdb
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.AssemblyReference.cache
-C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Form1.resources
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Hill.resources
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Properties.Resources.resources
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.GenerateResource.cache
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.exe
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.pdb
+C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Menu.resources
