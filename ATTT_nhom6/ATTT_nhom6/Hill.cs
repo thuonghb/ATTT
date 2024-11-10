@@ -100,12 +100,6 @@ namespace ATTT_nhom6
 
             return maTranNghichDao;
         }
-
-        private void GiaiMa_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Thoat_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
@@ -187,7 +181,57 @@ namespace ATTT_nhom6
 
         private void giaima_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                string[] dongMaTran = richTextBox1.Text.Trim().Split('\n');
+                int kichThuocMaTran = dongMaTran.Length;
+                int[,] maTranKhoa = new int[kichThuocMaTran, kichThuocMaTran];
 
+                for (int i = 0; i < kichThuocMaTran; i++)
+                {
+                    string[] dong = dongMaTran[i].Trim().Split(' ');
+                    for (int j = 0; j < kichThuocMaTran; j++)
+                    {
+                        maTranKhoa[i, j] = int.Parse(dong[j]);
+                    }
+                }
+
+                int[,] maTranNghichDaoKhoa = MaTranNghichDaoMod26(maTranKhoa, kichThuocMaTran);
+
+                string vanBanMaHoa = textBox1.Text.ToUpper();
+
+                string vanBanGoc = "";
+                for (int k = 0; k < vanBanMaHoa.Length; k += kichThuocMaTran)
+                {
+                    int[] vectorMaHoa = new int[kichThuocMaTran];
+                    for (int i = 0; i < kichThuocMaTran; i++)
+                    {
+                        vectorMaHoa[i] = vanBanMaHoa[k + i] - 'A';
+                    }
+
+                    int[] vectorVanBanGoc = new int[kichThuocMaTran];
+                    for (int i = 0; i < kichThuocMaTran; i++)
+                    {
+                        vectorVanBanGoc[i] = 0;
+                        for (int j = 0; j < kichThuocMaTran; j++)
+                        {
+                            vectorVanBanGoc[i] += maTranNghichDaoKhoa[i, j] * vectorMaHoa[j];
+                        }
+                        vectorVanBanGoc[i] = vectorVanBanGoc[i] % 26;
+                    }
+
+                    for (int i = 0; i < kichThuocMaTran; i++)
+                    {
+                        vanBanGoc += (char)(vectorVanBanGoc[i] + 'A');
+                    }
+                }
+
+                textBox2.Text = vanBanGoc;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }
