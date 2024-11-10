@@ -23,12 +23,12 @@ namespace ATTT_nhom6
         // Hàm sinh khóa RSA (e, d, n)
         private void GenerateKeys(int p, int q, int e)
         {
-            long n = (long)p * q;                 // n = p * q
-            long phi = (long)(p - 1) * (q - 1);   // phi(n) = (p - 1) * (q - 1)
+            long n = (long)p * q;                // n = p * q
+            long phi = (long)(p - 1) * (q - 1);  // phi(n) = (p - 1) * (q - 1)
 
             publicKeyE = e;
             publicKeyN = n;
-            privateKeyD = ExtendedEuclidean(e, phi);  // Tính khóa riêng d bằng Euclide mở rộng
+            privateKeyD = ExtendedEuclidean(e, phi); // Tính khóa riêng d bằng Euclide mở rộng
         }
 
         // Hàm Euclide mở rộng để tìm nghịch đảo modular của e theo phi(n)
@@ -59,40 +59,31 @@ namespace ATTT_nhom6
         private string EncryptString(string plaintext, long e, long n)
         {
             StringBuilder encryptedText = new StringBuilder();
-            foreach (char ch in plaintext.ToUpper())
+            foreach (char ch in plaintext)
             {
-                if (char.IsLetter(ch))
-                {
-                    long asciiValue = ch - 'A';            // Chuyển ký tự thành giá trị từ 0 đến 25 (A = 0, B = 1, ...)
-                    long encryptedAscii = Encrypt(asciiValue, e, n);  // Mã hóa giá trị này bằng RSA
-                    encryptedText.Append((char)((encryptedAscii % 26) + 'A'));  // Chuyển số đã mã hóa về ký tự A-Z
-                }
-                else
-                {
-                    encryptedText.Append(ch);  // Giữ nguyên ký tự không phải là chữ cái
-                }
+                long asciiValue = (long)ch;  // Lấy giá trị ASCII của ký tự
+                long encryptedValue = Encrypt(asciiValue, e, n);  // Mã hóa giá trị số này bằng RSA
+
+                encryptedText.Append(encryptedValue);  // Thêm giá trị mã hóa vào chuỗi
+                encryptedText.Append(" ");  // Thêm khoảng trắng giữa các mã hóa (dễ đọc)
             }
-            return encryptedText.ToString();  // Trả về chuỗi ký tự đã mã hóa
+            return encryptedText.ToString();
         }
 
         // Hàm giải mã chuỗi ký tự
         private string DecryptString(string ciphertext, long d, long n)
         {
             StringBuilder decryptedText = new StringBuilder();
-            foreach (char ch in ciphertext.ToUpper())
+            string[] encryptedValues = ciphertext.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string encryptedValue in encryptedValues)
             {
-                if (char.IsLetter(ch))
-                {
-                    long encryptedAscii = ch - 'A';        // Chuyển ký tự thành giá trị từ 0 đến 25
-                    long decryptedAscii = Decrypt(encryptedAscii, d, n);  // Giải mã
-                    decryptedText.Append((char)((decryptedAscii % 26) + 'A'));  // Chuyển số đã giải mã thành ký tự A-Z
-                }
-                else
-                {
-                    decryptedText.Append(ch);  // Giữ nguyên ký tự không phải là chữ cái
-                }
+                long cipher = long.Parse(encryptedValue);  // Chuyển chuỗi thành số
+                long decryptedValue = Decrypt(cipher, d, n);  // Giải mã giá trị số này bằng RSA
+
+                decryptedText.Append((char)decryptedValue);  // Chuyển giá trị giải mã thành ký tự
             }
-            return decryptedText.ToString();  // Trả về chuỗi ký tự đã giải mã
+            return decryptedText.ToString();
         }
 
         // Hàm mã hóa một giá trị số
@@ -153,12 +144,9 @@ namespace ATTT_nhom6
                     string ciphertext = EncryptString(plaintext, publicKeyE, publicKeyN);
                     txtCiphertext.Text = ciphertext;
                 }
-                else if (!string.IsNullOrEmpty(txtCiphertext.Text))
+                else
                 {
-                    // Giải mã văn bản
-                    string ciphertext = txtCiphertext.Text;
-                    string plaintext = DecryptString(ciphertext, privateKeyD, publicKeyN);
-                    txtPlaintext.Text = plaintext;
+                    MessageBox.Show("Vui lòng nhập văn bản để mã hóa!");
                 }
             }
             catch (Exception ex)
@@ -177,6 +165,28 @@ namespace ATTT_nhom6
             Menu menu = new Menu();
             menu.Show();
             this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtCiphertext.Text))
+                {
+                    // Giải mã văn bản
+                    string ciphertext = txtCiphertext.Text;
+                    string plaintext = DecryptString(ciphertext, privateKeyD, publicKeyN);
+                    txtPlaintext.Text = plaintext;
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập văn bản để giải mã!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
         }
     }
 }

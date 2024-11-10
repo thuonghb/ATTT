@@ -45,9 +45,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -96,11 +97,11 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(439, 44);
+            this.button2.Location = new System.Drawing.Point(54, 172);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 40);
+            this.button2.Size = new System.Drawing.Size(111, 40);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Mã hóa / Giải mã";
+            this.button2.Text = "Mã hóa";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -133,7 +134,7 @@
             this.txtPlaintext.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlaintext.Location = new System.Drawing.Point(182, 44);
             this.txtPlaintext.Name = "txtPlaintext";
-            this.txtPlaintext.Size = new System.Drawing.Size(206, 30);
+            this.txtPlaintext.Size = new System.Drawing.Size(364, 30);
             this.txtPlaintext.TabIndex = 9;
             // 
             // txtCiphertext
@@ -141,7 +142,7 @@
             this.txtCiphertext.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiphertext.Location = new System.Drawing.Point(182, 117);
             this.txtCiphertext.Name = "txtCiphertext";
-            this.txtCiphertext.Size = new System.Drawing.Size(206, 30);
+            this.txtCiphertext.Size = new System.Drawing.Size(364, 30);
             this.txtCiphertext.TabIndex = 10;
             // 
             // txtPublicKey
@@ -204,6 +205,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
@@ -211,12 +213,23 @@
             this.groupBox1.Controls.Add(this.txtCiphertext);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 292);
+            this.groupBox1.Location = new System.Drawing.Point(25, 263);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(686, 182);
+            this.groupBox1.Size = new System.Drawing.Size(686, 229);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kết quả";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(533, 172);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(114, 40);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Thoát";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -238,16 +251,16 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "MÃ HÓA RSA";
             // 
-            // button3
+            // button4
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(439, 102);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(207, 40);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Thoát";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(288, 172);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(111, 40);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Giải mã";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // RSA
             // 
@@ -300,5 +313,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
