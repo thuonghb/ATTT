@@ -231,6 +231,7 @@ namespace ATTT_nhom6
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("hehe");
             }
         }
     }
