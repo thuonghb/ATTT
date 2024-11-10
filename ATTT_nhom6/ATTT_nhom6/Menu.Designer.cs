@@ -146,15 +146,15 @@
             // mãRSAToolStripMenuItem
             // 
             this.mãRSAToolStripMenuItem.Name = "mãRSAToolStripMenuItem";
-            this.mãRSAToolStripMenuItem.Size = new System.Drawing.Size(327, 38);
+            this.mãRSAToolStripMenuItem.Size = new System.Drawing.Size(315, 38);
             this.mãRSAToolStripMenuItem.Text = "Mã RSA";
             this.mãRSAToolStripMenuItem.Click += new System.EventHandler(this.mãRSAToolStripMenuItem_Click);
             // 
             // mãDeToolStripMenuItem
             // 
             this.mãDeToolStripMenuItem.Name = "mãDeToolStripMenuItem";
-            this.mãDeToolStripMenuItem.Size = new System.Drawing.Size(327, 38);
-            this.mãDeToolStripMenuItem.Text = "Mã Deffine Hecman";
+            this.mãDeToolStripMenuItem.Size = new System.Drawing.Size(315, 38);
+            this.mãDeToolStripMenuItem.Text = "Mã Diffie-Hellman";
             this.mãDeToolStripMenuItem.Click += new System.EventHandler(this.mãDeToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem

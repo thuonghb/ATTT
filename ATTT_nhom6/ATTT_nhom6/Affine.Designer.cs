@@ -47,7 +47,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(572, 281);
+            this.btnExit.Location = new System.Drawing.Point(527, 281);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 48);
             this.btnExit.TabIndex = 15;
@@ -86,7 +86,7 @@
             // btnGM
             // 
             this.btnGM.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGM.Location = new System.Drawing.Point(351, 281);
+            this.btnGM.Location = new System.Drawing.Point(306, 281);
             this.btnGM.Name = "btnGM";
             this.btnGM.Size = new System.Drawing.Size(134, 48);
             this.btnGM.TabIndex = 10;
@@ -97,7 +97,7 @@
             // btnMH
             // 
             this.btnMH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMH.Location = new System.Drawing.Point(137, 281);
+            this.btnMH.Location = new System.Drawing.Point(92, 281);
             this.btnMH.Name = "btnMH";
             this.btnMH.Size = new System.Drawing.Size(134, 48);
             this.btnMH.TabIndex = 11;
@@ -134,7 +134,7 @@
             // txtKhoaB
             // 
             this.txtKhoaB.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoaB.Location = new System.Drawing.Point(542, 198);
+            this.txtKhoaB.Location = new System.Drawing.Point(542, 195);
             this.txtKhoaB.Name = "txtKhoaB";
             this.txtKhoaB.Size = new System.Drawing.Size(139, 39);
             this.txtKhoaB.TabIndex = 17;
@@ -143,7 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(410, 204);
+            this.label4.Location = new System.Drawing.Point(421, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 33);
             this.label4.TabIndex = 16;

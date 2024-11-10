@@ -63,7 +63,7 @@
             // btnMH
             // 
             this.btnMH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMH.Location = new System.Drawing.Point(129, 275);
+            this.btnMH.Location = new System.Drawing.Point(91, 275);
             this.btnMH.Name = "btnMH";
             this.btnMH.Size = new System.Drawing.Size(134, 48);
             this.btnMH.TabIndex = 2;
@@ -110,7 +110,7 @@
             // btnGM
             // 
             this.btnGM.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGM.Location = new System.Drawing.Point(343, 275);
+            this.btnGM.Location = new System.Drawing.Point(305, 275);
             this.btnGM.Name = "btnGM";
             this.btnGM.Size = new System.Drawing.Size(134, 48);
             this.btnGM.TabIndex = 2;
@@ -121,7 +121,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(564, 275);
+            this.btnExit.Location = new System.Drawing.Point(526, 275);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 48);
             this.btnExit.TabIndex = 6;

@@ -59,3 +59,4 @@ D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Vigener
 >>>>>>> 7a5b9d2d26b9c83c6cdb1230c7348ed1dccbb67c
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.PlayFair.resources
 C:\Users\ACER\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Vigenere.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Diffie_Hellman.resources
