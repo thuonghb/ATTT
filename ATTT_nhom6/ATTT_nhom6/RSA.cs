@@ -27,51 +27,48 @@ namespace ATTT_nhom6
 
             publicKeyE = e;
             publicKeyN = n;
-            privateKeyD = ModInverse(e, phi);     // Tính khóa riêng d
+            privateKeyD = ExtendedEuclidean(e, phi);  // Tính khóa riêng d bằng Euclide mở rộng
         }
 
-        // Hàm tính nghịch đảo modular
-        private long ModInverse(long e, long phi)
+        // Hàm Euclide mở rộng để tìm nghịch đảo modular của e theo phi(n)
+        private long ExtendedEuclidean(long e, long phi)
         {
-            long d = 0, x1 = 0, x2 = 1, y1 = 1, tempPhi = phi;
+            long t = 0, newT = 1;
+            long r = phi, newR = e;
 
-            while (e > 0)
+            while (newR != 0)
             {
-                long temp1 = tempPhi / e;
-                long temp2 = tempPhi - temp1 * e;
-                tempPhi = e;
-                e = temp2;
+                long quotient = r / newR;
 
-                long x = x2 - temp1 * x1;
-                x2 = x1;
-                x1 = x;
-
-                long y = d - temp1 * y1;
-                d = y1;
-                y1 = y;
+                // Cập nhật t và r
+                (t, newT) = (newT, t - quotient * newT);
+                (r, newR) = (newR, r - quotient * newR);
             }
 
-            if (tempPhi == 1)
-            {
-                return d + phi;
-            }
+            // Nếu r > 1 thì e không có nghịch đảo modular
+            if (r > 1)
+                throw new ArgumentException("e không có nghịch đảo modular");
 
-            return -1;
+            // Nếu t < 0 thì cộng thêm phi để có kết quả dương
+            if (t < 0)
+                t += phi;
+
+            return t; // t chính là d (nghịch đảo modular của e theo phi)
         }
 
         // Hàm mã hóa văn bản
         private long Encrypt(long message, long e, long n)
         {
-            return ModPow(message, e, n);
+            return ModPow(message, e, n); // Mã hóa: message^e mod n
         }
 
         // Hàm giải mã văn bản
         private long Decrypt(long cipher, long d, long n)
         {
-            return ModPow(cipher, d, n);
+            return ModPow(cipher, d, n); // Giải mã: cipher^d mod n
         }
 
-        // Hàm tính lũy thừa modulus
+        // Hàm tính lũy thừa modular
         private long ModPow(long baseValue, long exponent, long modulus)
         {
             long result = 1;
@@ -85,6 +82,8 @@ namespace ATTT_nhom6
             }
             return result;
         }
+
+        // Nút sinh khóa
         private void button1_Click(object sender, EventArgs e)
         {
             try
