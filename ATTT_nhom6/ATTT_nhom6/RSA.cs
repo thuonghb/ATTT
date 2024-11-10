@@ -131,5 +131,10 @@ namespace ATTT_nhom6
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

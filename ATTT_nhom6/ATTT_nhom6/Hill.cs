@@ -19,50 +19,48 @@ namespace ATTT_nhom6
             InitializeComponent();
         }
         // Hàm đệ quy tính định thức của ma trận n x n
-        private int Determinant(int[,] matrix, int n)
+        private int TinhDinhThuc(int[,] maTran, int n)
         {
             if (n == 1)
-                return matrix[0, 0];
+                return maTran[0, 0];
             if (n == 2)
-                return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+                return maTran[0, 0] * maTran[1, 1] - maTran[0, 1] * maTran[1, 0];
 
-            int det = 0;
-            int sign = 1;
+            int dinhThuc = 0;
+            int dau = 1;
 
             for (int i = 0; i < n; i++)
             {
-                int[,] subMatrix = GetSubMatrix(matrix, 0, i, n);
-                det += sign * matrix[0, i] * Determinant(subMatrix, n - 1);
-                sign = -sign;
+                int[,] maTranCon = LayMaTranCon(maTran, 0, i, n);
+                dinhThuc += dau * maTran[0, i] * TinhDinhThuc(maTranCon, n - 1);
+                dau = -dau;
             }
 
-            return det;
+            return dinhThuc;
         }
 
-        // Hàm tạo ma trận con
-        private int[,] GetSubMatrix(int[,] matrix, int row, int col, int n)
+        private int[,] LayMaTranCon(int[,] maTran, int hang, int cot, int n)
         {
-            int[,] subMatrix = new int[n - 1, n - 1];
-            int subRow = 0, subCol = 0;
+            int[,] maTranCon = new int[n - 1, n - 1];
+            int hangCon = 0, cotCon = 0;
 
             for (int i = 0; i < n; i++)
             {
-                if (i == row) continue;
-                subCol = 0;
+                if (i == hang) continue;
+                cotCon = 0;
                 for (int j = 0; j < n; j++)
                 {
-                    if (j == col) continue;
-                    subMatrix[subRow, subCol] = matrix[i, j];
-                    subCol++;
+                    if (j == cot) continue;
+                    maTranCon[hangCon, cotCon] = maTran[i, j];
+                    cotCon++;
                 }
-                subRow++;
+                hangCon++;
             }
 
-            return subMatrix;
+            return maTranCon;
         }
 
-        // Hàm tính modulo nghịch đảo (sử dụng Euclid mở rộng)
-        private int ModInverse(int a, int m)
+        private int ModNghichDao(int a, int m)
         {
             a = a % m;
             for (int x = 1; x < m; x++)
@@ -70,110 +68,98 @@ namespace ATTT_nhom6
                 if ((a * x) % m == 1)
                     return x;
             }
-            return 1; // Nếu không tìm thấy
+            return 1;
         }
 
-        // Hàm tính ma trận nghịch đảo mod 26
-        private int[,] InverseMatrixMod26(int[,] matrix, int n)
+        private int[,] MaTranNghichDaoMod26(int[,] maTran, int n)
         {
-            int det = Determinant(matrix, n);
-            int detInv = ModInverse(det % 26, 26);
-            int[,] adjMatrix = new int[n, n]; // Ma trận phụ đại số (adjugate matrix)
+            int dinhThuc = TinhDinhThuc(maTran, n);
+            int dinhThucInv = ModNghichDao(dinhThuc % 26, 26);
+            int[,] maTranPhu = new int[n, n];
 
-            // Tính ma trận phụ đại số (adjugate matrix)
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    int[,] subMatrix = GetSubMatrix(matrix, i, j, n);
-                    int subDet = Determinant(subMatrix, n - 1);
-                    adjMatrix[j, i] = (int)Math.Pow(-1, i + j) * subDet % 26;
-                    if (adjMatrix[j, i] < 0) adjMatrix[j, i] += 26; // Đảm bảo mod 26
+                    int[,] maTranCon = LayMaTranCon(maTran, i, j, n);
+                    int dinhThucCon = TinhDinhThuc(maTranCon, n - 1);
+                    maTranPhu[j, i] = (int)Math.Pow(-1, i + j) * dinhThucCon % 26;
+                    if (maTranPhu[j, i] < 0) maTranPhu[j, i] += 26;
                 }
             }
 
-            // Nhân ma trận phụ đại số với nghịch đảo định thức
-            int[,] invMatrix = new int[n, n];
+            int[,] maTranNghichDao = new int[n, n];
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    invMatrix[i, j] = (adjMatrix[i, j] * detInv) % 26;
-                    if (invMatrix[i, j] < 0) invMatrix[i, j] += 26; // Đảm bảo mod 26
+                    maTranNghichDao[i, j] = (maTranPhu[i, j] * dinhThucInv) % 26;
+                    if (maTranNghichDao[i, j] < 0) maTranNghichDao[i, j] += 26;
                 }
             }
 
-            return invMatrix;
+            return maTranNghichDao;
         }
 
-
-        private void mahoa_Click(object sender, EventArgs e)
+        private void MaHoa_Click(object sender, EventArgs e)
         {
             try
             {
-                // Lấy ma trận khóa từ RichTextBox và chuyển thành ma trận nxn
-                string[] matrixRows = richTextBox1.Text.Trim().Split('\n');
-                int matrixSize = matrixRows.Length;
-                int[,] keyMatrix = new int[matrixSize, matrixSize];
+                string[] dongMaTran = richTextBox1.Text.Trim().Split('\n');
+                int kichThuocMaTran = dongMaTran.Length;
+                int[,] maTranKhoa = new int[kichThuocMaTran, kichThuocMaTran];
 
-                for (int i = 0; i < matrixSize; i++)
+                for (int i = 0; i < kichThuocMaTran; i++)
                 {
-                    string[] row = matrixRows[i].Trim().Split(' ');
-                    for (int j = 0; j < matrixSize; j++)
+                    string[] dong = dongMaTran[i].Trim().Split(' ');
+                    for (int j = 0; j < kichThuocMaTran; j++)
                     {
-                        keyMatrix[i, j] = int.Parse(row[j]);
+                        maTranKhoa[i, j] = int.Parse(dong[j]);
                     }
                 }
 
-                // Kiểm tra định thức của ma trận khóa
-                int det = Determinant(keyMatrix, matrixSize);
-                if (det == 0)
+                int dinhThuc = TinhDinhThuc(maTranKhoa, kichThuocMaTran);
+                if (dinhThuc == 0)
                 {
                     MessageBox.Show("Ma trận khóa không hợp lệ! Định thức bằng 0.");
                     return;
                 }
 
-                // Lấy văn bản từ TextBox và chuyển đổi ký tự thành số
-                string plainText = textBox1.Text.ToUpper();
-                plainText = plainText.Replace(" ", ""); // Xóa khoảng trắng
+                string vanBanGoc = textBox1.Text.ToUpper();
+                vanBanGoc = vanBanGoc.Replace(" ", "");
 
-                // Chèn padding nếu văn bản không đủ
-                while (plainText.Length % matrixSize != 0)
+                while (vanBanGoc.Length % kichThuocMaTran != 0)
                 {
-                    plainText += "X"; // Padding với 'X'
+                    vanBanGoc += "X";
                 }
 
-                // Mã hóa từng khối văn bản
-                string cipherText = "";
-                for (int k = 0; k < plainText.Length; k += matrixSize)
+                string vanBanMaHoa = "";
+                for (int k = 0; k < vanBanGoc.Length; k += kichThuocMaTran)
                 {
-                    int[] plainVector = new int[matrixSize];
-                    for (int i = 0; i < matrixSize; i++)
+                    int[] vectorVanBanGoc = new int[kichThuocMaTran];
+                    for (int i = 0; i < kichThuocMaTran; i++)
                     {
-                        plainVector[i] = plainText[k + i] - 'A';
+                        vectorVanBanGoc[i] = vanBanGoc[k + i] - 'A';
                     }
 
-                    // Tính toán mã hóa y = (K * x) mod 26
-                    int[] cipherVector = new int[matrixSize];
-                    for (int i = 0; i < matrixSize; i++)
+                    int[] vectorMaHoa = new int[kichThuocMaTran];
+                    for (int i = 0; i < kichThuocMaTran; i++)
                     {
-                        cipherVector[i] = 0;
-                        for (int j = 0; j < matrixSize; j++)
+                        vectorMaHoa[i] = 0;
+                        for (int j = 0; j < kichThuocMaTran; j++)
                         {
-                            cipherVector[i] += keyMatrix[i, j] * plainVector[j];
+                            vectorMaHoa[i] += maTranKhoa[i, j] * vectorVanBanGoc[j];
                         }
-                        cipherVector[i] = cipherVector[i] % 26;
+                        vectorMaHoa[i] = vectorMaHoa[i] % 26;
                     }
 
-                    // Chuyển mã hóa thành ký tự
-                    for (int i = 0; i < matrixSize; i++)
+                    for (int i = 0; i < kichThuocMaTran; i++)
                     {
-                        cipherText += (char)(cipherVector[i] + 'A');
+                        vanBanMaHoa += (char)(vectorMaHoa[i] + 'A');
                     }
                 }
 
-                // Hiển thị kết quả mã hóa
-                textBox2.Text = cipherText;
+                textBox2.Text = vanBanMaHoa;
             }
             catch (Exception ex)
             {
@@ -181,61 +167,54 @@ namespace ATTT_nhom6
             }
         }
 
-        private void giaima_Click(object sender, EventArgs e)
+        private void GiaiMa_Click(object sender, EventArgs e)
         {
             try
             {
-                // Lấy ma trận khóa từ RichTextBox và chuyển thành ma trận nxn
-                string[] matrixRows = richTextBox1.Text.Trim().Split('\n');
-                int matrixSize = matrixRows.Length;
-                int[,] keyMatrix = new int[matrixSize, matrixSize];
+                string[] dongMaTran = richTextBox1.Text.Trim().Split('\n');
+                int kichThuocMaTran = dongMaTran.Length;
+                int[,] maTranKhoa = new int[kichThuocMaTran, kichThuocMaTran];
 
-                for (int i = 0; i < matrixSize; i++)
+                for (int i = 0; i < kichThuocMaTran; i++)
                 {
-                    string[] row = matrixRows[i].Trim().Split(' ');
-                    for (int j = 0; j < matrixSize; j++)
+                    string[] dong = dongMaTran[i].Trim().Split(' ');
+                    for (int j = 0; j < kichThuocMaTran; j++)
                     {
-                        keyMatrix[i, j] = int.Parse(row[j]);
+                        maTranKhoa[i, j] = int.Parse(dong[j]);
                     }
                 }
 
-                // Tính ma trận nghịch đảo mod 26
-                int[,] inverseKeyMatrix = InverseMatrixMod26(keyMatrix, matrixSize);
+                int[,] maTranNghichDaoKhoa = MaTranNghichDaoMod26(maTranKhoa, kichThuocMaTran);
 
-                // Lấy văn bản mã hóa từ TextBox
-                string cipherText = textBox1.Text.ToUpper();
+                string vanBanMaHoa = textBox1.Text.ToUpper();
 
-                // Giải mã từng khối văn bản
-                string decryptedText = "";
-                for (int k = 0; k < cipherText.Length; k += matrixSize)
+                string vanBanGoc = "";
+                for (int k = 0; k < vanBanMaHoa.Length; k += kichThuocMaTran)
                 {
-                    int[] cipherVector = new int[matrixSize];
-                    for (int i = 0; i < matrixSize; i++)
+                    int[] vectorMaHoa = new int[kichThuocMaTran];
+                    for (int i = 0; i < kichThuocMaTran; i++)
                     {
-                        cipherVector[i] = cipherText[k + i] - 'A';
+                        vectorMaHoa[i] = vanBanMaHoa[k + i] - 'A';
                     }
 
-                    // Tính toán giải mã x = (K^-1 * y) mod 26
-                    int[] plainVector = new int[matrixSize];
-                    for (int i = 0; i < matrixSize; i++)
+                    int[] vectorVanBanGoc = new int[kichThuocMaTran];
+                    for (int i = 0; i < kichThuocMaTran; i++)
                     {
-                        plainVector[i] = 0;
-                        for (int j = 0; j < matrixSize; j++)
+                        vectorVanBanGoc[i] = 0;
+                        for (int j = 0; j < kichThuocMaTran; j++)
                         {
-                            plainVector[i] += inverseKeyMatrix[i, j] * cipherVector[j];
+                            vectorVanBanGoc[i] += maTranNghichDaoKhoa[i, j] * vectorMaHoa[j];
                         }
-                        plainVector[i] = plainVector[i] % 26;
+                        vectorVanBanGoc[i] = vectorVanBanGoc[i] % 26;
                     }
 
-                    // Chuyển mã hóa thành ký tự
-                    for (int i = 0; i < matrixSize; i++)
+                    for (int i = 0; i < kichThuocMaTran; i++)
                     {
-                        decryptedText += (char)(plainVector[i] + 'A');
+                        vanBanGoc += (char)(vectorVanBanGoc[i] + 'A');
                     }
                 }
 
-                // Hiển thị kết quả giải mã
-                textBox2.Text = decryptedText;
+                textBox2.Text = vanBanGoc;
             }
             catch (Exception ex)
             {
@@ -248,8 +227,8 @@ namespace ATTT_nhom6
             Menu menu = new Menu();
             menu.Show();
             this.Close();
-
         }
+
 
         private void sizekey_Click(object sender, EventArgs e)
         {
