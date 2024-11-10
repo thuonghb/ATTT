@@ -29,8 +29,6 @@ namespace ATTT_nhom6
             Caeser caeser = new Caeser();
             this.Hide();
             caeser.ShowDialog();
-            this.Show();
-            //fsdf
         }
 
         private void mãHóaĐơnBảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +36,6 @@ namespace ATTT_nhom6
             DonBang donBang = new DonBang();
             this.Hide(); 
             donBang.ShowDialog();
-            this.Show();
 
         }
 
@@ -47,7 +44,6 @@ namespace ATTT_nhom6
             PlayFair playFair = new PlayFair();
             this.Hide();
             playFair.ShowDialog();
-            this.Show();
 
         }
 
@@ -56,7 +52,6 @@ namespace ATTT_nhom6
             Affine affine = new Affine();
             this.Hide(); 
             affine.ShowDialog();
-            this.Show();
         }
 
         private void mãVigenereToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,7 +59,6 @@ namespace ATTT_nhom6
             Vigenere vigenere = new Vigenere();
             this.Hide();
             vigenere.ShowDialog();
-            this.Show();
         }
 
         private void mãHóaHillToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -72,7 +66,6 @@ namespace ATTT_nhom6
             Hill hill = new Hill();
             this.Hide(); 
             hill.ShowDialog();
-            this.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -90,12 +83,12 @@ namespace ATTT_nhom6
             RSA rsa = new RSA();
             this.Hide();
             rsa.ShowDialog();
-            this.Show();
         }
 
         private void mãDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Diffie_Hellman diffie_Hellman = new Diffie_Hellman();
+            this.Hide();
             diffie_Hellman.Show();
         }
 

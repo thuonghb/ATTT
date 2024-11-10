@@ -124,6 +124,8 @@ namespace ATTT_nhom6
         // Sự kiện khi nhấn nút "Thoát"
         private void Thoat_Click(object sender, EventArgs e)
         {
+            Menu menu = new Menu();
+            menu.Show();
             this.Close();
         }
 

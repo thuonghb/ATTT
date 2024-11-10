@@ -95,7 +95,7 @@
             // 
             this.txtPublicYa.Enabled = false;
             this.txtPublicYa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublicYa.Location = new System.Drawing.Point(228, 28);
+            this.txtPublicYa.Location = new System.Drawing.Point(228, 15);
             this.txtPublicYa.Name = "txtPublicYa";
             this.txtPublicYa.Size = new System.Drawing.Size(100, 34);
             this.txtPublicYa.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.txtPublicYb.Enabled = false;
             this.txtPublicYb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublicYb.Location = new System.Drawing.Point(647, 25);
+            this.txtPublicYb.Location = new System.Drawing.Point(651, 15);
             this.txtPublicYb.Name = "txtPublicYb";
             this.txtPublicYb.Size = new System.Drawing.Size(100, 34);
             this.txtPublicYb.TabIndex = 6;
@@ -172,7 +172,7 @@
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.Location = new System.Drawing.Point(184, 28);
+            this.lblResult.Location = new System.Drawing.Point(236, 552);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(0, 26);
             this.lblResult.TabIndex = 13;
@@ -181,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 28);
+            this.label4.Location = new System.Drawing.Point(23, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(186, 26);
             this.label4.TabIndex = 14;
@@ -191,7 +191,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(423, 31);
+            this.label5.Location = new System.Drawing.Point(427, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(185, 26);
             this.label5.TabIndex = 15;
@@ -262,16 +262,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblResult);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtPublicYa);
             this.groupBox2.Controls.Add(this.txtSecretKeyB);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtPublicYa);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtSecretKeyA);
             this.groupBox2.Controls.Add(this.txtPublicYb);
-            this.groupBox2.Location = new System.Drawing.Point(23, 373);
+            this.groupBox2.Location = new System.Drawing.Point(23, 365);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(809, 165);
             this.groupBox2.TabIndex = 33;
@@ -292,7 +291,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 550);
+            this.ClientSize = new System.Drawing.Size(854, 598);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -307,6 +307,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

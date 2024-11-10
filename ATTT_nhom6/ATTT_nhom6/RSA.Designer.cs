@@ -47,6 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,9 +96,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(433, 74);
+            this.button2.Location = new System.Drawing.Point(439, 44);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 48);
+            this.button2.Size = new System.Drawing.Size(207, 40);
             this.button2.TabIndex = 4;
             this.button2.Text = "Mã hóa / Giải mã";
             this.button2.UseVisualStyleBackColor = true;
@@ -203,6 +204,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtPlaintext);
@@ -235,6 +237,17 @@
             this.label8.Size = new System.Drawing.Size(192, 32);
             this.label8.TabIndex = 1;
             this.label8.Text = "MÃ HÓA RSA";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(439, 102);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(207, 40);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Thoát";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // RSA
             // 
@@ -286,5 +299,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button3;
     }
 }
