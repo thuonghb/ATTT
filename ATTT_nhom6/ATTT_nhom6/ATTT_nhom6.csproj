@@ -86,6 +86,7 @@
     <Compile Include="PlayFair.Designer.cs">
       <DependentUpon>PlayFair.cs</DependentUpon>
     </Compile>
+    <Compile Include="playfairCipher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSA.cs">
@@ -100,6 +101,7 @@
     <Compile Include="Vigenere.Designer.cs">
       <DependentUpon>Vigenere.cs</DependentUpon>
     </Compile>
+    <Compile Include="vigenereCipher.cs" />
     <EmbeddedResource Include="Affine.resx">
       <DependentUpon>Affine.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +117,9 @@
     <EmbeddedResource Include="Hill.resx">
       <DependentUpon>Hill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayFair.resx">
+      <DependentUpon>PlayFair.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="RSA.resx">
       <DependentUpon>RSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vigenere.resx">
+      <DependentUpon>Vigenere.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

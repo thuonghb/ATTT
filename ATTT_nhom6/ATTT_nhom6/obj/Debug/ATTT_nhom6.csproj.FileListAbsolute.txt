@@ -50,3 +50,6 @@ C:\Users\tthan\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.
 C:\Users\tthan\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.csproj.CoreCompileInputs.cache
 C:\Users\tthan\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.exe
 C:\Users\tthan\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.pdb
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.PlayFair.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.RSA.resources
+D:\User\Documents\GitHub\ATTT\ATTT_nhom6\ATTT_nhom6\obj\Debug\ATTT_nhom6.Vigenere.resources
