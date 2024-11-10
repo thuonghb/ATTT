@@ -108,16 +108,16 @@ namespace ATTT_nhom6
 
         private void sizekey_Click(object sender, EventArgs e)
         {
-            textBox1.Enabled = true;
-            textBox2.Enabled = true;
-            richTextBox1.Enabled = true;
+            txtvanban.Enabled = true;
+            txtkq.Enabled = true;
+            khoa.Enabled = true;
         }
 
         private void mahoa_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string[] dongMaTran = richTextBox1.Text.Trim().Split('\n');
+                string[] dongMaTran = khoa.Text.Trim().Split('\n');
                 int kichThuocMaTran = dongMaTran.Length;
                 int[,] maTranKhoa = new int[kichThuocMaTran, kichThuocMaTran];
 
@@ -137,7 +137,7 @@ namespace ATTT_nhom6
                     return;
                 }
 
-                string vanBanGoc = textBox1.Text.ToUpper();
+                string vanBanGoc = txtvanban.Text.ToUpper();
                 vanBanGoc = vanBanGoc.Replace(" ", "");
 
                 while (vanBanGoc.Length % kichThuocMaTran != 0)
@@ -171,7 +171,7 @@ namespace ATTT_nhom6
                     }
                 }
 
-                textBox2.Text = vanBanMaHoa;
+                txtkq.Text = vanBanMaHoa;
             }
             catch (Exception ex)
             {
@@ -183,7 +183,7 @@ namespace ATTT_nhom6
         {
             try
             {
-                string[] dongMaTran = richTextBox1.Text.Trim().Split('\n');
+                string[] dongMaTran = khoa.Text.Trim().Split('\n');
                 int kichThuocMaTran = dongMaTran.Length;
                 int[,] maTranKhoa = new int[kichThuocMaTran, kichThuocMaTran];
 
@@ -198,7 +198,7 @@ namespace ATTT_nhom6
 
                 int[,] maTranNghichDaoKhoa = MaTranNghichDaoMod26(maTranKhoa, kichThuocMaTran);
 
-                string vanBanMaHoa = textBox1.Text.ToUpper();
+                string vanBanMaHoa = txtvanban.Text.ToUpper();
 
                 string vanBanGoc = "";
                 for (int k = 0; k < vanBanMaHoa.Length; k += kichThuocMaTran)
@@ -226,7 +226,7 @@ namespace ATTT_nhom6
                     }
                 }
 
-                textBox2.Text = vanBanGoc;
+                txtkq.Text = vanBanGoc;
             }
             catch (Exception ex)
             {

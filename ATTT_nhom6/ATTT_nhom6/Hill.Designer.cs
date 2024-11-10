@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.khoa = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.giaima = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Giaima = new System.Windows.Forms.Button();
+            this.txtkq = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.mahoa = new System.Windows.Forms.Button();
+            this.txtvanban = new System.Windows.Forms.TextBox();
+            this.Mahoa = new System.Windows.Forms.Button();
             this.sizekey = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.Thoat = new System.Windows.Forms.Button();
@@ -43,25 +43,18 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // khoa
             // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(156, 175);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(275, 182);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
+            this.khoa.Enabled = false;
+            this.khoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.khoa.Location = new System.Drawing.Point(156, 175);
+            this.khoa.Name = "khoa";
+            this.khoa.Size = new System.Drawing.Size(275, 182);
+            this.khoa.TabIndex = 15;
+            this.khoa.Text = "";
             // 
             // label2
             // 
-
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(235, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(443, 34);
-            this.textBox1.TabIndex = 16;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(33, 254);
@@ -70,25 +63,25 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Khóa:";
             // 
-            // giaima
+            // Giaima
             // 
-            this.giaima.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.giaima.Location = new System.Drawing.Point(659, 295);
-            this.giaima.Name = "giaima";
-            this.giaima.Size = new System.Drawing.Size(161, 40);
-            this.giaima.TabIndex = 4;
-            this.giaima.Text = "Giải mã";
-            this.giaima.UseVisualStyleBackColor = true;
-            this.giaima.Click += new System.EventHandler(this.giaima_Click_1);
+            this.Giaima.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Giaima.Location = new System.Drawing.Point(659, 295);
+            this.Giaima.Name = "Giaima";
+            this.Giaima.Size = new System.Drawing.Size(161, 40);
+            this.Giaima.TabIndex = 4;
+            this.Giaima.Text = "Giải mã";
+            this.Giaima.UseVisualStyleBackColor = true;
+            this.Giaima.Click += new System.EventHandler(this.giaima_Click_1);
             // 
-            // textBox2
+            // txtkq
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(156, 401);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(443, 34);
-            this.textBox2.TabIndex = 17;
+            this.txtkq.Enabled = false;
+            this.txtkq.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtkq.Location = new System.Drawing.Point(156, 401);
+            this.txtkq.Name = "txtkq";
+            this.txtkq.Size = new System.Drawing.Size(443, 34);
+            this.txtkq.TabIndex = 17;
             // 
             // label1
             // 
@@ -101,24 +94,25 @@
             this.label1.Text = "Văn Bản:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtvanban
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(156, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(443, 34);
-            this.textBox1.TabIndex = 16;
+            this.txtvanban.Enabled = false;
+            this.txtvanban.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtvanban.Location = new System.Drawing.Point(156, 105);
+            this.txtvanban.Name = "txtvanban";
+            this.txtvanban.Size = new System.Drawing.Size(443, 34);
+            this.txtvanban.TabIndex = 16;
             // 
-            // mahoa
+            // Mahoa
             // 
-            this.mahoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mahoa.Location = new System.Drawing.Point(659, 204);
-            this.mahoa.Name = "mahoa";
-            this.mahoa.Size = new System.Drawing.Size(161, 40);
-            this.mahoa.TabIndex = 3;
-            this.mahoa.Text = "Mã hóa";
-            this.mahoa.UseVisualStyleBackColor = true;
-            this.mahoa.Click += new System.EventHandler(this.mahoa_Click_1);
+            this.Mahoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mahoa.Location = new System.Drawing.Point(659, 204);
+            this.Mahoa.Name = "Mahoa";
+            this.Mahoa.Size = new System.Drawing.Size(161, 40);
+            this.Mahoa.TabIndex = 3;
+            this.Mahoa.Text = "Mã hóa";
+            this.Mahoa.UseVisualStyleBackColor = true;
+            this.Mahoa.Click += new System.EventHandler(this.mahoa_Click_1);
             // 
             // sizekey
             // 
@@ -178,15 +172,15 @@
             this.ClientSize = new System.Drawing.Size(888, 483);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Thoat);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtkq);
+            this.Controls.Add(this.txtvanban);
+            this.Controls.Add(this.khoa);
             this.Controls.Add(this.sizekey);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.giaima);
-            this.Controls.Add(this.mahoa);
+            this.Controls.Add(this.Giaima);
+            this.Controls.Add(this.Mahoa);
             this.Name = "Hill";
             this.Text = "Hill";
             this.panel1.ResumeLayout(false);
@@ -198,13 +192,13 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox khoa;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button giaima;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button Giaima;
+        private System.Windows.Forms.TextBox txtkq;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button mahoa;
+        private System.Windows.Forms.TextBox txtvanban;
+        private System.Windows.Forms.Button Mahoa;
         private System.Windows.Forms.Button sizekey;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Thoat;
