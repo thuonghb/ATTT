@@ -20,6 +20,7 @@ namespace ATTT_nhom6
         {
             InitializeComponent();
         }
+        // Hàm sinh khóa RSA (e, d, n)
         private void GenerateKeys(int p, int q, int e)
         {
             long n = (long)p * q;                 // n = p * q
@@ -45,27 +46,65 @@ namespace ATTT_nhom6
                 (r, newR) = (newR, r - quotient * newR);
             }
 
-            // Nếu r > 1 thì e không có nghịch đảo modular
             if (r > 1)
                 throw new ArgumentException("e không có nghịch đảo modular");
 
-            // Nếu t < 0 thì cộng thêm phi để có kết quả dương
             if (t < 0)
                 t += phi;
 
-            return t; // t chính là d (nghịch đảo modular của e theo phi)
+            return t;
         }
 
-        // Hàm mã hóa văn bản
+        // Hàm mã hóa chuỗi ký tự
+        private string EncryptString(string plaintext, long e, long n)
+        {
+            StringBuilder encryptedText = new StringBuilder();
+            foreach (char ch in plaintext.ToUpper())
+            {
+                if (char.IsLetter(ch))
+                {
+                    long asciiValue = ch - 'A';            // Chuyển ký tự thành giá trị từ 0 đến 25 (A = 0, B = 1, ...)
+                    long encryptedAscii = Encrypt(asciiValue, e, n);  // Mã hóa giá trị này bằng RSA
+                    encryptedText.Append((char)((encryptedAscii % 26) + 'A'));  // Chuyển số đã mã hóa về ký tự A-Z
+                }
+                else
+                {
+                    encryptedText.Append(ch);  // Giữ nguyên ký tự không phải là chữ cái
+                }
+            }
+            return encryptedText.ToString();  // Trả về chuỗi ký tự đã mã hóa
+        }
+
+        // Hàm giải mã chuỗi ký tự
+        private string DecryptString(string ciphertext, long d, long n)
+        {
+            StringBuilder decryptedText = new StringBuilder();
+            foreach (char ch in ciphertext.ToUpper())
+            {
+                if (char.IsLetter(ch))
+                {
+                    long encryptedAscii = ch - 'A';        // Chuyển ký tự thành giá trị từ 0 đến 25
+                    long decryptedAscii = Decrypt(encryptedAscii, d, n);  // Giải mã
+                    decryptedText.Append((char)((decryptedAscii % 26) + 'A'));  // Chuyển số đã giải mã thành ký tự A-Z
+                }
+                else
+                {
+                    decryptedText.Append(ch);  // Giữ nguyên ký tự không phải là chữ cái
+                }
+            }
+            return decryptedText.ToString();  // Trả về chuỗi ký tự đã giải mã
+        }
+
+        // Hàm mã hóa một giá trị số
         private long Encrypt(long message, long e, long n)
         {
-            return ModPow(message, e, n); // Mã hóa: message^e mod n
+            return ModPow(message, e, n);
         }
 
-        // Hàm giải mã văn bản
+        // Hàm giải mã một giá trị số
         private long Decrypt(long cipher, long d, long n)
         {
-            return ModPow(cipher, d, n); // Giải mã: cipher^d mod n
+            return ModPow(cipher, d, n);
         }
 
         // Hàm tính lũy thừa modular
@@ -88,21 +127,18 @@ namespace ATTT_nhom6
         {
             try
             {
-                // Lấy giá trị từ TextBox
                 int p = int.Parse(txtP.Text);
                 int q = int.Parse(txtQ.Text);
                 int eValue = int.Parse(txtE.Text);
 
-                // Gọi hàm sinh khóa
                 GenerateKeys(p, q, eValue);
 
-                // Hiển thị khóa công khai và khóa riêng
                 txtPublicKey.Text = $"(e, n): ({publicKeyE}, {publicKeyN})";
                 txtPrivateKey.Text = $"(d, n): ({privateKeyD}, {publicKeyN})";
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
 
@@ -113,21 +149,21 @@ namespace ATTT_nhom6
                 if (!string.IsNullOrEmpty(txtPlaintext.Text))
                 {
                     // Mã hóa văn bản
-                    long plaintext = long.Parse(txtPlaintext.Text);
-                    long ciphertext = Encrypt(plaintext, publicKeyE, publicKeyN);
-                    txtCiphertext.Text = ciphertext.ToString();
+                    string plaintext = txtPlaintext.Text;
+                    string ciphertext = EncryptString(plaintext, publicKeyE, publicKeyN);
+                    txtCiphertext.Text = ciphertext;
                 }
                 else if (!string.IsNullOrEmpty(txtCiphertext.Text))
                 {
                     // Giải mã văn bản
-                    long ciphertext = long.Parse(txtCiphertext.Text);
-                    long plaintext = Decrypt(ciphertext, privateKeyD, publicKeyN);
-                    txtPlaintext.Text = plaintext.ToString();
+                    string ciphertext = txtCiphertext.Text;
+                    string plaintext = DecryptString(ciphertext, privateKeyD, publicKeyN);
+                    txtPlaintext.Text = plaintext;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
 
