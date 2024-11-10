@@ -60,6 +60,12 @@
       <DependentUpon>Caeser.cs</DependentUpon>
     </Compile>
     <Compile Include="CaeserCipher.cs" />
+    <Compile Include="Diffie-Hellman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diffie-Hellman.Designer.cs">
+      <DependentUpon>Diffie-Hellman.cs</DependentUpon>
+    </Compile>
     <Compile Include="DonBang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caeser.resx">
       <DependentUpon>Caeser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diffie-Hellman.resx">
+      <DependentUpon>Diffie-Hellman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DonBang.resx">
       <DependentUpon>DonBang.cs</DependentUpon>

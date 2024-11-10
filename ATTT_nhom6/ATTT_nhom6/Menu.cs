@@ -82,5 +82,11 @@ namespace ATTT_nhom6
             this.Hide();
             rsa.Show();
         }
+
+        private void mãDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Diffie_Hellman diffie_Hellman = new Diffie_Hellman();
+            diffie_Hellman.Show();
+        }
     }
 }

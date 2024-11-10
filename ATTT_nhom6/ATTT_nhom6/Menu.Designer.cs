@@ -143,6 +143,7 @@
             this.mãDeToolStripMenuItem.Name = "mãDeToolStripMenuItem";
             this.mãDeToolStripMenuItem.Size = new System.Drawing.Size(327, 38);
             this.mãDeToolStripMenuItem.Text = "Mã Deffine Hecman";
+            this.mãDeToolStripMenuItem.Click += new System.EventHandler(this.mãDeToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 

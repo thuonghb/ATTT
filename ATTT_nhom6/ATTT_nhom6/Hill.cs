@@ -102,15 +102,15 @@ namespace ATTT_nhom6
         }
         private void Thoat_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
             this.Close();
         }
 
 
         private void sizekey_Click(object sender, EventArgs e)
         {
-
+            textBox1.Enabled = true;
+            textBox2.Enabled = true;
+            richTextBox1.Enabled = true;
         }
 
         private void mahoa_Click_1(object sender, EventArgs e)
