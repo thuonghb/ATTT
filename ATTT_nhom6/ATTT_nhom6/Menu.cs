@@ -30,7 +30,6 @@ namespace ATTT_nhom6
             this.Hide();
             caeser.ShowDialog();
             this.Show();
-            //hiiii
         }
 
         private void mãHóaĐơnBảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +96,11 @@ namespace ATTT_nhom6
         {
             Diffie_Hellman diffie_Hellman = new Diffie_Hellman();
             diffie_Hellman.Show();
+        }
+
+        private void mãHóaHiệnĐạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

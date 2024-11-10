@@ -141,6 +141,7 @@
             this.mãHóaHiệnĐạiToolStripMenuItem.Name = "mãHóaHiệnĐạiToolStripMenuItem";
             this.mãHóaHiệnĐạiToolStripMenuItem.Size = new System.Drawing.Size(228, 37);
             this.mãHóaHiệnĐạiToolStripMenuItem.Text = "Mã hóa công khai";
+            this.mãHóaHiệnĐạiToolStripMenuItem.Click += new System.EventHandler(this.mãHóaHiệnĐạiToolStripMenuItem_Click);
             // 
             // mãRSAToolStripMenuItem
             // 
