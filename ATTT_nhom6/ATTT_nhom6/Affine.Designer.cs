@@ -39,12 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtKhoaB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(584, 248);
+            this.btnExit.Location = new System.Drawing.Point(572, 281);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 48);
             this.btnExit.TabIndex = 15;
@@ -55,7 +58,7 @@
             // txtKhoaA
             // 
             this.txtKhoaA.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoaA.Location = new System.Drawing.Point(214, 162);
+            this.txtKhoaA.Location = new System.Drawing.Point(202, 195);
             this.txtKhoaA.Name = "txtKhoaA";
             this.txtKhoaA.Size = new System.Drawing.Size(139, 39);
             this.txtKhoaA.TabIndex = 14;
@@ -64,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(82, 339);
+            this.label3.Location = new System.Drawing.Point(70, 372);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 33);
             this.label3.TabIndex = 13;
@@ -74,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(82, 168);
+            this.label2.Location = new System.Drawing.Point(70, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 33);
             this.label2.TabIndex = 12;
@@ -83,7 +86,7 @@
             // btnGM
             // 
             this.btnGM.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGM.Location = new System.Drawing.Point(363, 248);
+            this.btnGM.Location = new System.Drawing.Point(351, 281);
             this.btnGM.Name = "btnGM";
             this.btnGM.Size = new System.Drawing.Size(134, 48);
             this.btnGM.TabIndex = 10;
@@ -94,7 +97,7 @@
             // btnMH
             // 
             this.btnMH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMH.Location = new System.Drawing.Point(149, 248);
+            this.btnMH.Location = new System.Drawing.Point(137, 281);
             this.btnMH.Name = "btnMH";
             this.btnMH.Size = new System.Drawing.Size(134, 48);
             this.btnMH.TabIndex = 11;
@@ -105,7 +108,7 @@
             // txtKetQua
             // 
             this.txtKetQua.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKetQua.Location = new System.Drawing.Point(202, 333);
+            this.txtKetQua.Location = new System.Drawing.Point(190, 366);
             this.txtKetQua.Name = "txtKetQua";
             this.txtKetQua.Size = new System.Drawing.Size(491, 39);
             this.txtKetQua.TabIndex = 8;
@@ -113,7 +116,7 @@
             // txtVanBan
             // 
             this.txtVanBan.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVanBan.Location = new System.Drawing.Point(202, 79);
+            this.txtVanBan.Location = new System.Drawing.Point(190, 112);
             this.txtVanBan.Name = "txtVanBan";
             this.txtVanBan.Size = new System.Drawing.Size(491, 39);
             this.txtVanBan.TabIndex = 9;
@@ -122,7 +125,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 82);
+            this.label1.Location = new System.Drawing.Point(70, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 33);
             this.label1.TabIndex = 7;
@@ -131,7 +134,7 @@
             // txtKhoaB
             // 
             this.txtKhoaB.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoaB.Location = new System.Drawing.Point(554, 165);
+            this.txtKhoaB.Location = new System.Drawing.Point(542, 198);
             this.txtKhoaB.Name = "txtKhoaB";
             this.txtKhoaB.Size = new System.Drawing.Size(139, 39);
             this.txtKhoaB.TabIndex = 17;
@@ -140,17 +143,37 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(422, 171);
+            this.label4.Location = new System.Drawing.Point(410, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 33);
             this.label4.TabIndex = 16;
             this.label4.Text = "Khóa \"b\"";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(761, 81);
+            this.panel1.TabIndex = 30;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(269, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(239, 32);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "MÃ HÓA AFFINE";
+            // 
             // Affine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(762, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtKhoaB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnExit);
@@ -164,6 +187,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Affine";
             this.Text = "Affine";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +207,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtKhoaB;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
     }
 }

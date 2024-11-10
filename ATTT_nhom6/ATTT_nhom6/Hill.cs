@@ -233,5 +233,10 @@ namespace ATTT_nhom6
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

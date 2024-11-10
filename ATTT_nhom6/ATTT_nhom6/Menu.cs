@@ -27,43 +27,51 @@ namespace ATTT_nhom6
         private void mãCaeserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Caeser caeser = new Caeser();
-            caeser.MdiParent = this;
-            caeser.Show();
+            this.Hide();
+            caeser.ShowDialog();
+            this.Show();
         }
 
         private void mãHóaĐơnBảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DonBang donBang = new DonBang();
-            donBang.MdiParent = this; donBang.Show();
-            
+            this.Hide(); 
+            donBang.ShowDialog();
+            this.Show();
+
         }
 
         private void mãHóaPlayFairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PlayFair playFair = new PlayFair();
-            playFair.MdiParent = this; playFair.Show();
-            
+            this.Hide();
+            playFair.ShowDialog();
+            this.Show();
+
         }
 
         private void mãAffineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Affine affine = new Affine();
-            affine.MdiParent = this;
-            affine.Show();
+            this.Hide(); 
+            affine.ShowDialog();
+            this.Show();
         }
 
         private void mãVigenereToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vigenere vigenere = new Vigenere();
-            vigenere.MdiParent = this; vigenere.Show();
-            
+            this.Hide();
+            vigenere.ShowDialog();
+            this.Show();
         }
 
         private void mãHóaHillToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Hill hill = new Hill();
-            hill.MdiParent = this; hill.Show();
-           
+            this.Hide(); 
+            hill.ShowDialog();
+            this.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -80,7 +88,8 @@ namespace ATTT_nhom6
         {
             RSA rsa = new RSA();
             this.Hide();
-            rsa.Show();
+            rsa.ShowDialog();
+            this.Show();
         }
 
         private void mãDeToolStripMenuItem_Click(object sender, EventArgs e)
