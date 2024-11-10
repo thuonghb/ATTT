@@ -49,7 +49,7 @@
             this.mahoa.TabIndex = 3;
             this.mahoa.Text = "Mã hóa";
             this.mahoa.UseVisualStyleBackColor = true;
-            this.mahoa.Click += new System.EventHandler(this.mahoa_Click);
+            this.mahoa.Click += new System.EventHandler(this.mahoa_Click_1);
             // 
             // giaima
             // 
@@ -60,7 +60,7 @@
             this.giaima.TabIndex = 4;
             this.giaima.Text = "Giải mã";
             this.giaima.UseVisualStyleBackColor = true;
-            this.giaima.Click += new System.EventHandler(this.giaima_Click);
+            this.giaima.Click += new System.EventHandler(this.giaima_Click_1);
             // 
             // label1
             // 
